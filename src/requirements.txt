@@ -137,6 +137,7 @@ werkzeug==1.0.1           # via flask
 wheel==0.32.2             # via -r /Users/takesei/Develop/github.com/takesei/self-study/kedro/kedro-tutorial/src/requirements.in
 whichcraft==0.6.1         # via cookiecutter
 widgetsnbextension==3.5.1  # via ipywidgets
+xlrd==1.2.0               # via -r /Users/takesei/Develop/github.com/takesei/self-study/kedro/kedro-tutorial/src/requirements.in
 
 # The following packages are considered to be unsafe in a requirements file:
 # pip
