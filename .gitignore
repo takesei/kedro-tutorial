@@ -11,10 +11,13 @@ conf/**/*credentials*
 # ignore everything in the following folders
 data/**
 logs/**
+mlruns/**
 
 # except their sub-folders
 !data/**/
 !logs/**/
+!mlruns/**/
+mlruns.sqlite3
 
 # also keep all .gitkeep files
 !.gitkeep
