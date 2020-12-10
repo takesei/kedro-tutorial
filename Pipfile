@@ -5,6 +5,7 @@ name = "pypi"
 
 [packages]
 kedro = "*"
+neovim = "*"
 
 [dev-packages]
 

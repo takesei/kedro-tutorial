@@ -6,11 +6,44 @@
 companies:
   type: pandas.CSVDataSet
   filepath: data/01_raw/companies.csv
+  layer: raw
 
 reviews:
   type: pandas.CSVDataSet
   filepath: data/01_raw/reviews.csv
+  layer: raw
 
 shuttles:
   type: pandas.ExcelDataSet
   filepath: data/01_raw/shuttles.xlsx
+  layer: raw
+
+preprocessed_companies:
+   type: pandas.CSVDataSet
+   filepath: data/02_intermediate/preprocessed_companies.csv
+   layer: intermediate
+
+preprocessed_shuttles:
+  type: pandas.CSVDataSet
+  filepath: data/02_intermediate/preprocessed_shuttles.csv
+  layer: intermediate
+
+master_table:
+  type: kedro_mlflow.io.artifacts.MlflowArtifactDataSet
+  layer: primary
+  data_set:
+    type: pandas.CSVDataSet
+    filepath: data/03_primary/master_table.csv
+
+regressor:
+  type: kedro_mlflow.io.artifacts.MlflowArtifactDataSet
+  layer: models
+  data_set:
+    type: kedro_mlflow.io.models.MlflowModelSaverDataSet
+    filepath: data/06_models/regressor.pkl
+    flavor: mlflow.sklearn
+    versioned: true
+
+linear_model_metrics:
+  layer: reporting
+  type: kedro_mlflow.io.metrics.MlflowMetricsDataSet
